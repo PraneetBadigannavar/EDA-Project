@@ -1,0 +1,50 @@
+{
+    "1. Original Features (Baseline GB)": {
+        "features": "8 Numerical + Category ID",
+        "model": "GradientBoosting (n=100, d=5)",
+        "test_accuracy": 0.6563940092165899,
+        "test_macro_f1": 0.6555034786996571
+    },
+    "2. + Style & Cyclical Features": {
+        "features": "17 Numerical/Temporal + Category ID",
+        "model": "GradientBoosting",
+        "test_accuracy": 0.6857718894009217,
+        "test_macro_f1": 0.6853993284771658
+    },
+    "3. + Channel Authority (Freq + OOF Target)": {
+        "features": "17 Num/Temporal + Channel Authority + Category ID",
+        "model": "GradientBoosting",
+        "test_accuracy": 0.7554723502304147,
+        "test_macro_f1": 0.7602385656771609
+    },
+    "4. + Title TF-IDF (100 n-grams)": {
+        "features": "All Features (Num + Channel + Cat + TF-IDF)",
+        "model": "GradientBoosting",
+        "test_accuracy": 0.7865783410138248,
+        "test_macro_f1": 0.7857276814267317
+    },
+    "5. All Features + Default XGBoost": {
+        "features": "All Features",
+        "model": "XGBoost (Default)",
+        "test_accuracy": 0.7857142857142857,
+        "test_macro_f1": 0.7856060254607296
+    },
+    "6. Tuned XGBoost (depth=6, lr=0.06, sub=0.8)": {
+        "features": "All Features",
+        "model": "XGBoost (Tuned)",
+        "test_accuracy": 0.7975230414746544,
+        "test_macro_f1": 0.7973210253584017
+    },
+    "7. CatBoost Classifier (iter=350, d=6)": {
+        "features": "All Features",
+        "model": "CatBoost",
+        "test_accuracy": 0.7891705069124424,
+        "test_macro_f1": 0.7868140767350336
+    },
+    "8. Soft-Voting Ensemble (XGB+Cat+RF)": {
+        "features": "All Features",
+        "model": "Soft-Voting Ensemble",
+        "test_accuracy": 0.7952188940092166,
+        "test_macro_f1": 0.7940691322865394
+    }
+}

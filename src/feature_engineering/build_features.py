@@ -12,12 +12,23 @@ def build_features(input_path='data/cleaned/youtube_master.csv', output_path='da
     # Drop rows where published_at could not be parsed
     df = df.dropna(subset=['published_at']).copy()
     
-    print("Generating Content Features...")
+    print("Generating Content & Style Features...")
     df['title_length'] = df['title'].fillna('').astype(str).str.len()
     df['title_word_count'] = df['title'].fillna('').astype(str).str.split().str.len()
     df['description_length'] = df['description'].fillna('').astype(str).str.len()
     
-    print("Generating Time Features...")
+    # Title style metrics
+    def calc_caps_ratio(text):
+        letters = [c for c in str(text) if c.isalpha()]
+        return sum(1 for c in letters if c.isupper()) / len(letters) if len(letters) > 0 else 0.0
+
+    df['title_caps_ratio'] = df['title'].apply(calc_caps_ratio)
+    df['has_exclamation'] = df['title'].fillna('').astype(str).apply(lambda s: 1 if '!' in s else 0)
+    df['has_question'] = df['title'].fillna('').astype(str).apply(lambda s: 1 if '?' in s else 0)
+    df['has_digits'] = df['title'].fillna('').astype(str).apply(lambda s: 1 if any(c.isdigit() for c in s) else 0)
+    df['title_character_density'] = df['title_length'] / np.maximum(df['title_word_count'], 1)
+
+    print("Generating Time & Cyclical Features...")
     df['upload_hour'] = df['published_at'].dt.hour
     df['upload_day'] = df['published_at'].dt.day_name()
     df['upload_day_num'] = df['published_at'].dt.dayofweek
@@ -25,6 +36,12 @@ def build_features(input_path='data/cleaned/youtube_master.csv', output_path='da
     df['upload_year'] = df['published_at'].dt.year
     df['is_weekend'] = df['upload_day_num'].apply(lambda x: 1 if x in [5, 6] else 0)
     
+    # Cyclical hour and day of week encoding
+    df['hour_sin'] = np.sin(2 * np.pi * df['upload_hour'] / 24.0)
+    df['hour_cos'] = np.cos(2 * np.pi * df['upload_hour'] / 24.0)
+    df['day_sin'] = np.sin(2 * np.pi * df['upload_day_num'] / 7.0)
+    df['day_cos'] = np.cos(2 * np.pi * df['upload_day_num'] / 7.0)
+
     print("Generating Video Age Features...")
     # Reference date is current max published date + 1 day
     max_date = df['published_at'].max()

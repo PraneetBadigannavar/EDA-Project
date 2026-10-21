@@ -1,0 +1,139 @@
+{
+    "cross_validation_5fold": {
+        "Baseline Gradient Boosting": {
+            "cv_accuracy_mean": 0.7729924378826072,
+            "cv_accuracy_std": 0.004372519765692634,
+            "cv_macro_f1_mean": 0.771259199620365,
+            "cv_macro_f1_std": 0.0046317805750453744,
+            "cv_weighted_f1_mean": 0.7712649792462826
+        },
+        "Baseline Random Forest": {
+            "cv_accuracy_mean": 0.770327691753691,
+            "cv_accuracy_std": 0.004981380328639703,
+            "cv_macro_f1_mean": 0.7675096031726281,
+            "cv_macro_f1_std": 0.0053642545890692055,
+            "cv_weighted_f1_mean": 0.7675151345997419
+        },
+        "Tuned XGBoost": {
+            "cv_accuracy_mean": 0.7805545552754771,
+            "cv_accuracy_std": 0.0031933452326100746,
+            "cv_macro_f1_mean": 0.7790346669116437,
+            "cv_macro_f1_std": 0.0029725185898709684,
+            "cv_weighted_f1_mean": 0.779040680561525
+        },
+        "CatBoost Classifier": {
+            "cv_accuracy_mean": 0.7695354699315808,
+            "cv_accuracy_std": 0.004594638216128644,
+            "cv_macro_f1_mean": 0.7657425840612122,
+            "cv_macro_f1_std": 0.004956930790977066,
+            "cv_weighted_f1_mean": 0.7657486169228906
+        },
+        "Soft-Voting Ensemble": {
+            "cv_accuracy_mean": 0.7801944544472452,
+            "cv_accuracy_std": 0.0022614790735480655,
+            "cv_macro_f1_mean": 0.7776201790040778,
+            "cv_macro_f1_std": 0.0023521514788160283,
+            "cv_weighted_f1_mean": 0.7776263330116961
+        }
+    },
+    "held_out_test_metrics": {
+        "Random Forest (Tuned)": {
+            "test_accuracy": 0.7785138248847926,
+            "test_macro_precision": 0.7750177827812855,
+            "test_macro_recall": 0.7784821086037829,
+            "test_macro_f1": 0.7759343072606276,
+            "test_weighted_f1": 0.7759588330552267,
+            "confusion_matrix": [
+                [
+                    932,
+                    205,
+                    20
+                ],
+                [
+                    232,
+                    742,
+                    183
+                ],
+                [
+                    23,
+                    106,
+                    1029
+                ]
+            ]
+        },
+        "CatBoost Classifier": {
+            "test_accuracy": 0.7891705069124424,
+            "test_macro_precision": 0.786377410336696,
+            "test_macro_recall": 0.7891433535899974,
+            "test_macro_f1": 0.7868140767350336,
+            "test_weighted_f1": 0.7868369456852747,
+            "confusion_matrix": [
+                [
+                    960,
+                    178,
+                    19
+                ],
+                [
+                    238,
+                    757,
+                    162
+                ],
+                [
+                    27,
+                    108,
+                    1023
+                ]
+            ]
+        },
+        "XGBoost Classifier": {
+            "test_accuracy": 0.7975230414746544,
+            "test_macro_precision": 0.7972551021148814,
+            "test_macro_recall": 0.7975045143351599,
+            "test_macro_f1": 0.7973210253584017,
+            "test_weighted_f1": 0.7973406817690878,
+            "confusion_matrix": [
+                [
+                    952,
+                    182,
+                    23
+                ],
+                [
+                    211,
+                    819,
+                    127
+                ],
+                [
+                    22,
+                    138,
+                    998
+                ]
+            ]
+        },
+        "Soft-Voting Ensemble": {
+            "test_accuracy": 0.7952188940092166,
+            "test_macro_precision": 0.7934786440410919,
+            "test_macro_recall": 0.7951959711580133,
+            "test_macro_f1": 0.7940691322865394,
+            "test_weighted_f1": 0.7940895825904697,
+            "confusion_matrix": [
+                [
+                    953,
+                    180,
+                    24
+                ],
+                [
+                    215,
+                    795,
+                    147
+                ],
+                [
+                    24,
+                    121,
+                    1013
+                ]
+            ]
+        }
+    },
+    "best_model": "XGBoost Classifier",
+    "accuracy_gain_vs_baseline_pct": 14.11290322580645
+}
