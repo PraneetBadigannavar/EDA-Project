@@ -1,0 +1,38 @@
+{
+    "analysis_1_view_distribution": {
+        "median_views": 216776.0,
+        "mean_views": 747623.9423287434,
+        "conclusion": "View count exhibits extreme positive skewness; most videos are concentrated in lower view ranges (< 1M views) with a small percentage of viral outliers."
+    },
+    "analysis_2_category_distribution": {
+        "top_category": "Entertainment",
+        "top_category_count": 7624,
+        "conclusion": "The 'Entertainment' category heavily dominates YouTube content, followed by 'News & Politics' and 'Music'."
+    },
+    "analysis_3_engagement_by_category": {
+        "highest_engagement_category": "Science & Technology",
+        "highest_engagement_score": 9.669948592169417,
+        "conclusion": "'Science & Technology' yields the highest average user interaction rate relative to total views."
+    },
+    "analysis_4_upload_day": {
+        "peak_upload_day": "Friday",
+        "best_engagement_day": "Sunday",
+        "conclusion": "Peak upload frequency occurs on Friday, while maximum audience engagement rate is achieved on Sunday."
+    },
+    "analysis_5_upload_hour": {
+        "peak_upload_hour": 14,
+        "highest_views_hour": 13,
+        "conclusion": "Upload volume peaks around 14:00 UTC, whereas videos uploaded around 13:00 UTC generate higher average view counts."
+    },
+    "analysis_6_correlation": {
+        "views_likes_corr": 0.8463863502194162,
+        "views_comments_corr": 0.6225766951712497,
+        "title_len_views_corr": -0.061696117048027785,
+        "conclusion": "Strong linear correlation between views and likes (0.85) and comments (0.62). Title length shows near-zero correlation with views."
+    },
+    "analysis_7_outliers": {
+        "p99_views_threshold": 9760574.359999957,
+        "viral_video_count": 174,
+        "conclusion": "The top 1% viral videos threshold is 9,760,574 views. Highly viral videos often maintain high engagement, though extreme outlier view counts can exhibit lower percentage engagement due to massive passive reach."
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "kaggle_dataset": {
+        "rows": 32272,
+        "columns": 20,
+        "missing_values": {
+            "video_id": 0,
+            "trending_date": 0,
+            "title": 0,
+            "channel_title": 0,
+            "category_id": 0,
+            "category_name": 0,
+            "publish_time": 0,
+            "publish_date": 0,
+            "publish_hour": 0,
+            "tags": 0,
+            "has_tags": 0,
+            "views": 0,
+            "likes": 0,
+            "dislikes": 0,
+            "comment_count": 0,
+            "thumbnail_link": 0,
+            "comments_disabled": 0,
+            "ratings_disabled": 0,
+            "video_error_or_removed": 0,
+            "description": 524
+        },
+        "duplicate_video_ids": 15966,
+        "duplicate_records": 0
+    },
+    "api_category_dataset": {
+        "rows": 929,
+        "columns": 14,
+        "missing_values": {
+            "video_id": 0,
+            "title": 0,
+            "description": 329,
+            "channelTitle": 0,
+            "channelId": 0,
+            "categoryId": 0,
+            "publishedAt": 0,
+            "tags": 0,
+            "viewCount": 0,
+            "likeCount": 18,
+            "commentCount": 3,
+            "duration": 0,
+            "thumbnail_url": 0,
+            "category_name": 0
+        },
+        "duplicate_video_ids": 0,
+        "duplicate_records": 0
+    },
+    "api_trending_dataset": {
+        "rows": 199,
+        "columns": 13,
+        "missing_values": {
+            "video_id": 0,
+            "title": 0,
+            "description": 5,
+            "channelTitle": 0,
+            "channelId": 0,
+            "categoryId": 0,
+            "publishedAt": 0,
+            "tags": 0,
+            "viewCount": 0,
+            "likeCount": 5,
+            "commentCount": 1,
+            "duration": 0,
+            "thumbnail_url": 0
+        },
+        "duplicate_video_ids": 0,
+        "duplicate_records": 0
+    }
+}

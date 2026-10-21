@@ -1,0 +1,17 @@
+{
+    "RandomForestRegressor (Baseline)": {
+        "RMSE (Primary)": 1.1049527589918917,
+        "MAE": 0.8282812771689048,
+        "R2_Score": 0.3557063283548798
+    },
+    "XGBoostRegressor (Main)": {
+        "RMSE (Primary)": 1.1103728874674488,
+        "MAE": 0.8388360193062255,
+        "R2_Score": 0.34936991354193725
+    },
+    "CatBoostRegressor (Final)": {
+        "RMSE (Primary)": 1.1214024223722625,
+        "MAE": 0.8508553879332121,
+        "R2_Score": 0.33638006424900546
+    }
+}
